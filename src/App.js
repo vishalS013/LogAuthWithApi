@@ -7,17 +7,21 @@ import HomePage from './components/HomePage';
 import Login from './components/Login';
 import Protected from './Protected';
 import Products from './Pagination/Products';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ReactQuery from './ReactQuery/ReactQuery';
 
 function App() {
-
+const queryClient= new QueryClient()
   
   return (
     <>
-    {/* <Products/> */}
-    
+    <Products/>
+    {/* <QueryClientProvider client={queryClient}>
+      <ReactQuery/>
+    </QueryClientProvider> */}
 
     {/* Uncommenting this will  */}
-  <div>
+  {/* <div>
       <NavBar />
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -28,7 +32,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
-    </div>
+    </div> */}
     </>
   );
 }
